@@ -21,7 +21,7 @@ To run docker;
 docker-compose up
 ```
 
-or you can right click docker-compose.yaml file and select compose up.
+or you can right click docker-compose.yaml file and select compose up if you have Docker extension installed in your VS Code
 
 ---
 
