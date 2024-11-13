@@ -9,7 +9,7 @@ Set up your own PostgreSQL server through docker-compose.yaml file's settings.
 - Hostname: localhost
 - User: postgres
 - Password: Get it from docker-compose.yaml file.
-- Port: Get it from docker-compose.yaml file.
+- Port: 5432
 
 ---
 
