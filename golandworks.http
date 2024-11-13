@@ -1,0 +1,12 @@
+### GET request
+GET http://localhost:8080/todo
+
+### POST request
+POST http://localhost:8080/todo
+
+{
+    "item": "go for a walk"
+}
+
+### GET request to search
+GET http://localhost:8080/search?q=Shop
