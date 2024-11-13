@@ -1,10 +1,11 @@
 package main
 
 import (
-	"golandworks/internal/db"
-	"golandworks/internal/todo"
-	"golandworks/internal/transport"
 	"log"
+
+	"github.com/brkcnr/golandworks-api/internal/db"
+	"github.com/brkcnr/golandworks-api/internal/todo"
+	"github.com/brkcnr/golandworks-api/internal/transport"
 )
 
 func main() {

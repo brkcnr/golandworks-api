@@ -2,9 +2,10 @@ package transport
 
 import (
 	"encoding/json"
-	"golandworks/internal/todo"
 	"log"
 	"net/http"
+
+	"github.com/brkcnr/golandworks-api/internal/todo"
 )
 
 type TodoItem struct {

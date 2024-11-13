@@ -1,4 +1,4 @@
-module golandworks
+module github.com/brkcnr/golandworks-api
 
 go 1.22.6
 
