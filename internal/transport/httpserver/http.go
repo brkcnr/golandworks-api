@@ -67,3 +67,8 @@ func (s *Server) Serve() error {
 
 	return nil
 }
+
+// ServeHTTP implements the http.Handler interface.
+func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	s.mux.ServeHTTP(w, r)
+}

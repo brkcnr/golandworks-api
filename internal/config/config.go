@@ -80,32 +80,32 @@ func Load() (*Config, error) {
 
 // loadDBConfig loads the database configuration from environment variables.
 func loadDBConfig() (*DBConfig, error) {
-	port, portErr := strconv.Atoi(getEnvOrDefault("DB_PORT", "5432"))
+	port, portErr := strconv.Atoi(GetEnvOrDefault("DB_PORT", "5432"))
 
 	if portErr != nil {
 		return nil, fmt.Errorf("invalid DB_PORT: %w", portErr)
 	}
 	config := &DBConfig{
-		User: getEnvOrDefault("DB_USER", "postgres"),
+		User: GetEnvOrDefault("DB_USER", "postgres"),
 
 		Password: os.Getenv("DB_PASSWORD"),
 
-		DBName: getEnvOrDefault("DB_NAME", "postgres"),
+		DBName: GetEnvOrDefault("DB_NAME", "postgres"),
 
-		Host: getEnvOrDefault("DB_HOST", "localhost"),
+		Host: GetEnvOrDefault("DB_HOST", "localhost"),
 
 		Port: port,
 	}
 
-	if err := config.validate(); err != nil {
+	if err := config.Validate(); err != nil {
 		return nil, err
 	}
 
 	return config, nil
 }
 
-// validate validates the database configuration.
-func (c DBConfig) validate() error {
+// Validate validates the database configuration.
+func (c DBConfig) Validate() error {
 	if c.Password == "" {
 		return apierror.Wrap(
 
@@ -131,8 +131,8 @@ func (c DBConfig) validate() error {
 	return nil
 }
 
-// getEnvOrDefault gets the environment variable or the default value.
-func getEnvOrDefault(key, defaultValue string) string {
+// GetEnvOrDefault gets the environment variable or the default value.
+func GetEnvOrDefault(key, defaultValue string) string {
 	if value := os.Getenv(key); value != "" {
 		return value
 	}
